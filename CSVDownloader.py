@@ -9,9 +9,9 @@ import termcolor
 # Check for invalid characters in path
 def process_filename(filename):
     new_filename = datetime.datetime.now().strftime(filename)
-    if 1 in [c in new_filename for c in ['\\', '/', ':', '*', '?', '"', '<', '>', '|']]:
+    if 1 in [c in new_filename for c in ['*', '?', '"', '<', '>', '|']]:
         print('File destination contained an invalid character!')
-        print('Invalid characters are: \\, /, :, *, ?, ", <, >, |')
+        print('Invalid characters are: *, ?, ", <, >, |')
         sys.exit(-1)
     return new_filename
 
